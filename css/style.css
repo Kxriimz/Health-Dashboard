@@ -30,6 +30,7 @@ nav {
   padding: 14px 0;
   position: relative;
   z-index: 10;
+  transition: background 0.3s ease;
 }
 
 nav .container {
@@ -42,6 +43,7 @@ nav .container {
 nav h1 {
   font-size: 1.5rem;
   color: white;
+  transition: color 0.3s ease;
 }
 
 nav ul {
@@ -64,6 +66,12 @@ nav ul li button {
   font-size: 1rem;
   cursor: pointer;
   text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+nav ul li a:hover,
+nav ul li button:hover {
+  color: #ffe0b2 !important;
 }
 
 .hero {
@@ -72,6 +80,12 @@ nav ul li button {
   text-align: center;
   padding: 3rem 1rem;
   margin-top: 0;
+  transition: background 0.3s ease;
+}
+
+body.dark .hero {
+  background-color: #d84315;
+  color: #fff3e0;
 }
 
 .container {
@@ -136,4 +150,5 @@ footer {
   padding: 1rem;
   background: var(--accent-color);
   color: white;
+  transition: background 0.3s ease;
 }
