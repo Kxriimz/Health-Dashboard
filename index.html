@@ -4,23 +4,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Health Dashboard Simulation</title>
+    <title>Smart Health Dashboard</title>
     <link rel="stylesheet" href="css/style.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
     <header>
         <h1>Smart Health Dashboard (Simulation)</h1>
-        <p>Real-time simulated health data display - in progress</p>
+        <p>A real-time, student-led health data project exploring the future of digital care.</p>
     </header>
 
-   <section id="charts">
-    <canvas id="heartRateChart" width="400" height="200"></canvas>
-    <canvas id="spo2Chart" width="400" height="200"></canvas>
-</section>
+    <main>
+        <section id="intro">
+            <h2>Welcome</h2>
+            <p>
+                This is a simulated health analytics project developed by Karim, an Electrical & Computer Systems Engineering student, 
+                in collaboration with a Health and Science Master's researcher. Together, we explore data-driven innovation for 
+                ethical and insightful digital health systems.
+            </p>
+        </section>
+
+        <section id="charts">
+            <div class="chart-container">
+                <h3>Heart Rate (BPM)</h3>
+                <canvas id="heartRateChart"></canvas>
+            </div>
+            <div class="chart-container">
+                <h3>SpO₂ (%)</h3>
+                <canvas id="spo2Chart"></canvas>
+            </div>
+        </section>
+
+        <section id="about">
+            <h2>About Us</h2>
+            <p><strong>Karim</strong> – Electrical & Computer Systems Engineering Student at RMIT</p>
+            <p><strong>[Partner's Name]</strong> – Master's in Health and Science</p>
+        </section>
+    </main>
 
     <footer>
-        <p>Demo only — data simulated. Not for clinical use.</p>
+        <p>🚧 Demo only — simulated data. Built for learning and demonstration purposes.</p>
     </footer>
 
     <script src="js/main.js"></script>
