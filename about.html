@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,16 +6,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>About Us | Smart Health</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="./css/style.css" />
 </head>
 <body>
   <nav>
     <div class="container">
       <h1>Smart Health</h1>
       <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="index.html#dashboard">Dashboard</a></li>
-        <li><a href="about.html" class="active">About</a></li>
+        <li><a href="./index.html">Home</a></li>
+        <li><a href="./index.html#dashboard">Dashboard</a></li>
+        <li><a href="./about.html" class="active">About</a></li>
+        <li><button id="toggleTheme">Toggle Dark Mode</button></li>
       </ul>
     </div>
   </nav>
@@ -44,5 +46,11 @@
       <p>© 2025 Smart Health. All rights reserved.</p>
     </div>
   </footer>
+
+  <script>
+    document.getElementById('toggleTheme').addEventListener('click', () => {
+      document.body.classList.toggle('dark');
+    });
+  </script>
 </body>
 </html>
