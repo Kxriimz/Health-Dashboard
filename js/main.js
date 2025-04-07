@@ -47,3 +47,53 @@ function updateChart() {
 }
 
 setInterval(updateChart, 3000);
+
+
+const ctxSpO2 = document.createElement('canvas');
+ctxSpO2.id = 'spo2Chart';
+ctxSpO2.width = 400;
+ctxSpO2.height = 200;
+document.getElementById('charts').appendChild(ctxSpO2);
+
+const spo2Data = {
+    labels: [],
+    datasets: [{
+        label: 'SpO₂ (%)',
+        data: [],
+        borderColor: 'blue',
+        borderWidth: 2,
+        fill: false
+    }]
+};
+
+let spo2Chart = new Chart(ctxSpO2.getContext('2d'), {
+    type: 'line',
+    data: spo2Data,
+    options: {
+        responsive: true,
+        animation: false,
+        scales: {
+            y: {
+                min: 85,
+                max: 100
+            }
+        }
+    }
+});
+
+function updateSpO2Chart() {
+    const now = new Date().toLocaleTimeString();
+    const newReading = simulateReading(92, 99);
+
+    spo2Data.labels.push(now);
+    spo2Data.datasets[0].data.push(newReading);
+
+    if (spo2Data.labels.length > 10) {
+        spo2Data.labels.shift();
+        spo2Data.datasets[0].data.shift();
+    }
+
+    spo2Chart.update();
+}
+
+setInterval(updateSpO2Chart, 3000);
