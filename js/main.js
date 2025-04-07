@@ -36,95 +36,64 @@ let tempData = {
     }]
 };
 
-let heartRateChart = new Chart(ctxHR, {
-  type: 'line',
-  data: heartRateData,
-  options: {
+const chartOptions = (yMin, yMax) => ({
     responsive: true,
     animation: false,
     plugins: {
-      legend: {
-        labels: {
-          font: { size: 12 }
+        legend: {
+            labels: {
+                font: {
+                    size: 12
+                }
+            }
+        },
+        tooltip: {
+            bodyFont: {
+                size: 12
+            },
+            titleFont: {
+                size: 13
+            }
         }
-      },
-      tooltip: {
-        bodyFont: { size: 12 },
-        titleFont: { size: 13 }
-      }
     },
     scales: {
-      x: {
-        ticks: { font: { size: 10 } }
-      },
-      y: {
-        min: 50,
-        max: 150,
-        ticks: { font: { size: 10 } }
-      }
+        x: {
+            ticks: {
+                font: {
+                    size: 10
+                }
+            }
+        },
+        y: {
+            min: yMin,
+            max: yMax,
+            ticks: {
+                font: {
+                    size: 10
+                }
+            }
+        }
     }
-  }
+});
+
+let heartRateChart = new Chart(ctxHR, {
+    type: 'line',
+    data: heartRateData,
+    options: chartOptions(50, 150)
 });
 
 let spo2Chart = new Chart(ctxSpO2, {
-  type: 'line',
-  data: heartRateData,
-  options: {
-    responsive: true,
-    animation: false,
-    plugins: {
-      legend: {
-        labels: {
-          font: { size: 12 }
-        }
-      },
-      tooltip: {
-        bodyFont: { size: 12 },
-        titleFont: { size: 13 }
-      }
-    },
-    scales: {
-      x: {
-        ticks: { font: { size: 10 } }
-      },
-      y: {
-        min: 50,
-        max: 150,
-        ticks: { font: { size: 10 } }
-      }
-    }
-  }
+    type: 'line',
+    data: spo2Data,
+    options: chartOptions(85, 100)
 });
 
 let tempChart = new Chart(ctxTemp, {
-  type: 'line',
-  data: heartRateData,
-  options: {
-    responsive: true,
-    animation: false,
-    plugins: {
-      legend: {
-        labels: {
-          font: { size: 12 }
-        }
-      },
-      tooltip: {
-        bodyFont: { size: 12 },
-        titleFont: { size: 13 }
-      }
-    },
-    scales: {
-      x: {
-        ticks: { font: { size: 10 } }
-      },
-      y: {
-        min: 50,
-        max: 150,
-        ticks: { font: { size: 10 } }
-      }
-    }
-  }
+    type: 'line',
+    data: tempData,
+    options: chartOptions(35, 40)
 });
+
 function simulateReading(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
@@ -132,7 +101,6 @@ function simulateReading(min, max) {
 function updateCharts() {
     const now = new Date().toLocaleTimeString();
 
-    // Heart rate
     const newHR = simulateReading(60, 100);
     heartRateData.labels.push(now);
     heartRateData.datasets[0].data.push(newHR);
@@ -142,7 +110,6 @@ function updateCharts() {
     }
     heartRateChart.update();
 
-    // SpO2
     const newSpO2 = simulateReading(92, 99);
     spo2Data.labels.push(now);
     spo2Data.datasets[0].data.push(newSpO2);
@@ -152,7 +119,6 @@ function updateCharts() {
     }
     spo2Chart.update();
 
-    // Temperature
     const newTemp = (Math.random() * (38.5 - 36.2) + 36.2).toFixed(1);
     tempData.labels.push(now);
     tempData.datasets[0].data.push(newTemp);
