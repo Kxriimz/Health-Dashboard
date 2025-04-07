@@ -2,61 +2,68 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Smart Health Analytics</title>
-    <link rel="stylesheet" href="css/style.css" />
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Smart Health Dashboard</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
-    <nav>
-        <div class="container">
-            <h1>Smart Health Analytics</h1>
-            <ul>
-                <li><a href="#intro">Home</a></li>
-                <li><a href="#dashboard">Dashboard</a></li>
-                <li><a href="#about">About</a></li>
-            </ul>
-        </div>
-    </nav>
+  <nav>
+    <div class="container">
+      <h1>Smart Health</h1>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#dashboard">Dashboard</a></li>
+        <li><a href="#about">About</a></li>
+        <li><button id="toggleTheme">Toggle Dark Mode</button></li>
+      </ul>
+    </div>
+  </nav>
 
-    <header class="hero">
-        <div class="container">
-            <h2>Welcome to our simulation</h2>
-            <p>This dashboard visualizes real-time health data using simulated inputs to explore how future digital healthcare tools might look.</p>
-        </div>
-    </header>
+  <header class="hero">
+    <div class="container">
+      <h2>Welcome to our simulation</h2>
+      <p>This dashboard visualizes real-time health data using simulated inputs to explore how future digital healthcare tools might look.</p>
+    </div>
+  </header>
 
-    <section id="dashboard" class="container">
-        <h2>Real-Time Dashboard</h2>
-        <div class="chart-grid">
-            <div class="chart-card">
-                <h3>Heart Rate (BPM)</h3>
-                <canvas id="heartRateChart"></canvas>
-            </div>
-            <div class="chart-card">
-                <h3>SpO₂ (%)</h3>
-                <canvas id="spo2Chart"></canvas>
-            </div>
-            <div class="chart-card">
-            <h3>Temperature (°C)</h3>
-              <canvas id="tempChart"></canvas>
-               </div>
-        </div>
-    </section>
+  <section id="dashboard" class="container">
+    <h2>Real-Time Dashboard</h2>
+    <div class="chart-grid">
+      <div class="chart-card">
+        <h3>Heart Rate (BPM)</h3>
+        <canvas id="heartRateChart"></canvas>
+        <div class="alert" id="alertHR">Waiting for data...</div>
+        <button id="downloadHR">Download CSV</button>
+      </div>
+      <div class="chart-card">
+        <h3>SpO₂ (%)</h3>
+        <canvas id="spo2Chart"></canvas>
+        <div class="alert" id="alertSpO2">Waiting for data...</div>
+        <button id="downloadSpO2">Download CSV</button>
+      </div>
+      <div class="chart-card">
+        <h3>Temperature (°C)</h3>
+        <canvas id="tempChart"></canvas>
+        <div class="alert" id="alertTemp">Waiting for data...</div>
+        <button id="downloadTemp">Download CSV</button>
+      </div>
+    </div>
+  </section>
 
-    <section id="about" class="container">
-        <h2>About Us</h2>
-        <p><strong>Karim Khan</strong> – Electrical & Computer Systems Engineering Student at RMIT University</p>
-        <p><strong>Emre Nazik</strong> – Master's in Health and Science at VIC University</p>
-    </section>
+  <section id="about" class="container">
+    <h2>About Us</h2>
+    <p><strong>Karim Khan</strong> – Electrical & Computer Systems Engineering Student at RMIT University</p>
+    <p><strong>Emre Nazik</strong> – Master's in Health and Science at VIC University</p>
+  </section>
 
-    <footer>
-        <div class="container">
-            <p> Built for simulation purposes — Not for medical use. © 2025 Karim</p>
-        </div>
-    </footer>
+  <footer>
+    <div class="container">
+      <p>Built for simulation purposes – Not for medical use. © 2025 Karim</p>
+    </div>
+  </footer>
 
-    <script src="js/main.js"></script>
+  <script src="js/main.js"></script>
 </body>
 </html>
