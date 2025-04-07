@@ -37,50 +37,94 @@ let tempData = {
 };
 
 let heartRateChart = new Chart(ctxHR, {
-    type: 'line',
-    data: heartRateData,
-    options: {
-        responsive: true,
-        animation: false,
-        scales: {
-            y: {
-                min: 50,
-                max: 150
-            }
+  type: 'line',
+  data: heartRateData,
+  options: {
+    responsive: true,
+    animation: false,
+    plugins: {
+      legend: {
+        labels: {
+          font: { size: 12 }
         }
+      },
+      tooltip: {
+        bodyFont: { size: 12 },
+        titleFont: { size: 13 }
+      }
+    },
+    scales: {
+      x: {
+        ticks: { font: { size: 10 } }
+      },
+      y: {
+        min: 50,
+        max: 150,
+        ticks: { font: { size: 10 } }
+      }
     }
+  }
 });
 
 let spo2Chart = new Chart(ctxSpO2, {
-    type: 'line',
-    data: spo2Data,
-    options: {
-        responsive: true,
-        animation: false,
-        scales: {
-            y: {
-                min: 85,
-                max: 100
-            }
+  type: 'line',
+  data: heartRateData,
+  options: {
+    responsive: true,
+    animation: false,
+    plugins: {
+      legend: {
+        labels: {
+          font: { size: 12 }
         }
+      },
+      tooltip: {
+        bodyFont: { size: 12 },
+        titleFont: { size: 13 }
+      }
+    },
+    scales: {
+      x: {
+        ticks: { font: { size: 10 } }
+      },
+      y: {
+        min: 50,
+        max: 150,
+        ticks: { font: { size: 10 } }
+      }
     }
+  }
 });
 
 let tempChart = new Chart(ctxTemp, {
-    type: 'line',
-    data: tempData,
-    options: {
-        responsive: true,
-        animation: false,
-        scales: {
-            y: {
-                min: 35,
-                max: 40
-            }
+  type: 'line',
+  data: heartRateData,
+  options: {
+    responsive: true,
+    animation: false,
+    plugins: {
+      legend: {
+        labels: {
+          font: { size: 12 }
         }
+      },
+      tooltip: {
+        bodyFont: { size: 12 },
+        titleFont: { size: 13 }
+      }
+    },
+    scales: {
+      x: {
+        ticks: { font: { size: 10 } }
+      },
+      y: {
+        min: 50,
+        max: 150,
+        ticks: { font: { size: 10 } }
+      }
     }
+  }
 });
-
 function simulateReading(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
