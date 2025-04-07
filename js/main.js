@@ -90,9 +90,9 @@ function simulateReading(min, max) {
 }
 
 function updateAlerts(hr, spo2, temp) {
-  alertHR.textContent = hr > 130 ? "⚠ High heart rate!" : "✅ Heart rate normal.";
-  alertSpO2.textContent = spo2 < 92 ? "⚠ Low SpO₂ level!" : "✅ SpO₂ level normal.";
-  alertTemp.textContent = temp > 38 ? "⚠ Elevated temperature!" : "✅ Temperature normal.";
+  alertHR.textContent = hr > 130 ? "High heart rate!" : "Heart rate normal.";
+  alertSpO2.textContent = spo2 < 92 ? "Low SpO₂ level!" : "SpO₂ level normal.";
+  alertTemp.textContent = temp > 38 ? "Elevated temperature!" : "Temperature normal.";
 }
 
 function updateCharts() {
