@@ -28,31 +28,78 @@
     </div>
   </header>
 
-  <section id="case-study" class="container case-study-section">
-    <div class="case-header">
-      <h2>Case Study</h2>
-      <p>A simulation-based approach to smart health monitoring and real-time data visualisation.</p>
-    </div>
+<section id="case-study" class="container case-study-section">
+  <div class="case-header">
+    <h2>Case Study</h2>
+    <p>A detailed example of how electrical and computer systems can revolutionize modern health monitoring.</p>
+  </div>
 
-    <div class="case-grid">
-      <div class="case-box">
-        <h3>Background</h3>
-        <p>With rising interest in digital health solutions, we set out to create a real-time dashboard that simulates vital signs and presents them using clean, interactive web interfaces. Our goal was to build a project that bridges engineering with applied health science.</p>
-      </div>
-      <div class="case-box">
-        <h3>Problem</h3>
-        <p>Most existing dashboards were either overly technical or lacked visual accessibility. We wanted to address this gap by creating something simple, responsive, and aesthetically pleasing that both engineers and health researchers could collaborate on.</p>
-      </div>
-      <div class="case-box">
-        <h3>Solution</h3>
-        <p>Using HTML, CSS, and JavaScript with Chart.js, we simulated three key metrics—Heart Rate, SpO₂, and Temperature—updating live every few seconds. The user interface features dark mode, responsive cards, data export functionality, and condition-based alerts.</p>
-      </div>
-      <div class="case-box">
-        <h3>Results</h3>
-        <p>The final dashboard is deployable via GitHub Pages and performs smoothly across devices. It’s now being used as a showcase for portfolio, internship, and freelance opportunities in both tech and health sectors.</p>
-      </div>
+  <div class="case-grid" style="font-size: 0.92rem;">
+    <div class="case-box">
+      <h3>Background</h3>
+      <p>In an era of growing technological capability, the healthcare industry is actively seeking solutions that merge precision diagnostics with real-time responsiveness. The integration of electrical engineering principles, particularly through sensor networks, data acquisition, and embedded systems, enables new pathways for medical innovation. Wearables, biosensors, and edge-based microcontrollers have redefined what is possible in patient-centered care.</p>
     </div>
-  </section>
+    <div class="case-box">
+      <h3>Problem</h3>
+      <p>Traditional healthcare systems often operate with delayed data cycles, limited interoperability, and reactive diagnostics. There's a gap between clinical encounters and the continuous state of a patient’s well-being. Particularly in chronic care, patients lack tools that offer real-time insight or proactive alerts. This disconnect leads to inefficiencies, late interventions, and often poorer outcomes.</p>
+    </div>
+    <div class="case-box">
+      <h3>Solution</h3>
+      <p>Our Smart Health Dashboard is designed to simulate a low-latency, accessible monitoring platform that combines core electrical components—sensors, data buffers, and signal processors—with modern front-end data visualization. Metrics such as Heart Rate, SpO₂, and Body Temperature are simulated and rendered through interactive charts. The front-end features include real-time alerts, dark mode toggling, CSV export, and modular responsive design. This builds a bridge from hardware design to patient usability.</p>
+    </div>
+    <div class="case-box">
+      <h3>Results</h3>
+      <p>Through this simulation, we were able to demonstrate the potential for interdisciplinary projects that align engineering design with healthcare needs. The system shows how an electrical engineer and a health sciences researcher can co-develop tools that are user-friendly, medically relevant, and technologically scalable. While not intended for clinical deployment, this project highlights the importance of fusing embedded electronics, biomedical feedback systems, and software UX design in developing future-ready healthcare technologies.</p>
+    </div>
+  </div>
+</section>
+
+<style>
+.case-study-section {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+  background: linear-gradient(to bottom, var(--card-bg), var(--bg-color));
+  transition: background 1s ease;
+}
+
+.case-header {
+  text-align: center;
+  margin-bottom: 3rem;
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 1s forwards 0.2s;
+}
+
+.case-grid {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  opacity: 0;
+  transform: translateY(50px);
+  animation: fadeInUp 1s forwards 0.5s;
+}
+
+.case-box {
+  background: var(--card-bg);
+  box-shadow: 0 4px 12px var(--card-shadow);
+  border-radius: 1rem;
+  padding: 2rem;
+  transition: transform 0.3s ease;
+  font-size: 0.92rem;
+}
+
+.case-box:hover {
+  transform: scale(1.03);
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+</style>
+
 
   <footer>
     <div class="container">
