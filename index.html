@@ -2,48 +2,55 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Smart Health Dashboard</title>
-    <link rel="stylesheet" href="css/style.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Smart Health Analytics</title>
+    <link rel="stylesheet" href="css/style.css" />
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
-    <header>
-        <h1>Smart Health Dashboard (Simulation)</h1>
-        <p>A real-time, student-led health data project exploring the future of digital care.</p>
+    <nav>
+        <div class="container">
+            <h1>Smart Health Analytics</h1>
+            <ul>
+                <li><a href="#intro">Home</a></li>
+                <li><a href="#dashboard">Dashboard</a></li>
+                <li><a href="#about">About</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="container">
+            <h2>Welcome to our simulation</h2>
+            <p>This dashboard visualizes real-time health data using simulated inputs to explore how future digital healthcare tools might look.</p>
+        </div>
     </header>
 
-    <main>
-        <section id="intro">
-            <h2>Welcome</h2>
-            <p>
-                This is a simulated health analytics project developed by Karim, an Electrical & Computer Systems Engineering student, 
-                in collaboration with a Health and Science Master's researcher. Together, we explore data-driven innovation for 
-                ethical and insightful digital health systems.
-            </p>
-        </section>
-
-        <section id="charts">
-            <div class="chart-container">
+    <section id="dashboard" class="container">
+        <h2>Real-Time Dashboard</h2>
+        <div class="chart-grid">
+            <div class="chart-card">
                 <h3>Heart Rate (BPM)</h3>
                 <canvas id="heartRateChart"></canvas>
             </div>
-            <div class="chart-container">
+            <div class="chart-card">
                 <h3>SpO₂ (%)</h3>
                 <canvas id="spo2Chart"></canvas>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section id="about">
-            <h2>About Us</h2>
-            <p><strong>Karim</strong> – Electrical & Computer Systems Engineering Student at RMIT</p>
-            <p><strong>[Partner's Name]</strong> – Master's in Health and Science</p>
-        </section>
-    </main>
+    <section id="about" class="container">
+        <h2>About Us</h2>
+        <p><strong>Karim</strong> – Electrical & Computer Systems Engineering Student at RMIT</p>
+        <p><strong>[Partner’s Name]</strong> – Master's in Health and Science</p>
+    </section>
 
     <footer>
-        <p>🚧 Demo only — simulated data. Built for learning and demonstration purposes.</p>
+        <div class="container">
+            <p>🔬 Built for simulation purposes — Not for medical use. © 2025 Karim</p>
+        </div>
     </footer>
 
     <script src="js/main.js"></script>
